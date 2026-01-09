@@ -1,0 +1,7 @@
+{
+  "name": "CENC Serviços - Portfólio & Automação",
+  "description": "Uma plataforma profissional e responsiva para a CENC Serviços, especializada em automação residencial, elétrica e segurança. Inclui painel administrativo para atualização de flyers e vídeos.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CENC Serviços | Engenharia e Automação</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --cenc-navy: #051d2e;
+        --cenc-navy-light: #0c3b5d;
+        --cenc-teal: #00d2ff;
+        --whatsapp-green: #25d366;
+      }
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: var(--cenc-navy);
+        color: #f8fafc;
+      }
+      .text-navy { color: var(--cenc-navy); }
+      .bg-navy { background-color: var(--cenc-navy); }
+      .text-teal { color: var(--cenc-teal); }
+      .bg-teal { background-color: var(--cenc-teal); }
+      .bg-whatsapp { background-color: var(--whatsapp-green); }
+      
+      .glass {
+        background: rgba(5, 29, 46, 0.85);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      
+      .hero-gradient {
+        background: radial-gradient(circle at 20% 30%, #0c3b5d 0%, #051d2e 100%);
+      }
+
+      .mesh-bg {
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d2ff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      }
+
+      @keyframes pulse-green {
+        0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+        70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+      }
+      .animate-pulse-whatsapp {
+        animation: pulse-green 2s infinite;
+      }
+
+      .text-glow {
+        text-shadow: 0 0 30px rgba(0, 210, 255, 0.5);
+      }
+
+      /* Personalização da scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--cenc-navy);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--cenc-navy-light);
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--cenc-teal);
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+      }
+    }
+    </script>
+  </head>
+  <body class="antialiased overflow-x-hidden">
+    <div id="root"></div>
+  </body>
+</html>
