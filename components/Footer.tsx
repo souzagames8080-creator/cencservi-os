@@ -10,7 +10,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ content, logo }) => {
   return (
-    <footer id="contato" className="bg-[#051d2e] pt-32 pb-16 overflow-hidden border-t border-white/10 mesh-bg">
+    <footer id="contato" className="bg-[#020b13] pt-32 pb-16 overflow-hidden border-t border-white/5 mesh-bg">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-16 mb-24">
           <div className="space-y-10">
@@ -50,7 +50,7 @@ const Footer: React.FC<FooterProps> = ({ content, logo }) => {
             <div className="space-y-8">
               <div className="space-y-4">
                 <a href={`tel:${content.contactPhone1.replace(/\D/g, '')}`} className="flex items-center gap-5 group">
-                  <div className="w-12 h-12 bg-[#0c3b5d] rounded-2xl flex items-center justify-center text-teal group-hover:bg-teal group-hover:text-navy transition-all shadow-lg border border-white/10">
+                  <div className="w-12 h-12 bg-[#051421] rounded-2xl flex items-center justify-center text-teal group-hover:bg-teal group-hover:text-navy transition-all shadow-lg border border-white/5">
                     <Phone size={22} />
                   </div>
                   <div className="flex flex-col">
@@ -59,7 +59,7 @@ const Footer: React.FC<FooterProps> = ({ content, logo }) => {
                   </div>
                 </a>
                 <a href={`tel:${content.contactPhone2.replace(/\D/g, '')}`} className="flex items-center gap-5 group">
-                  <div className="w-12 h-12 bg-[#0c3b5d] rounded-2xl flex items-center justify-center text-teal group-hover:bg-teal group-hover:text-navy transition-all shadow-lg border border-white/10">
+                  <div className="w-12 h-12 bg-[#051421] rounded-2xl flex items-center justify-center text-teal group-hover:bg-teal group-hover:text-navy transition-all shadow-lg border border-white/5">
                     <Phone size={22} />
                   </div>
                    <div className="flex flex-col">
@@ -69,7 +69,7 @@ const Footer: React.FC<FooterProps> = ({ content, logo }) => {
                 </a>
               </div>
               <a href={`mailto:${content.contactEmail}`} className="flex items-center gap-5 group">
-                <div className="w-12 h-12 bg-[#0c3b5d] rounded-2xl flex items-center justify-center text-teal group-hover:bg-teal group-hover:text-navy transition-all shadow-lg border border-white/10">
+                <div className="w-12 h-12 bg-[#051421] rounded-2xl flex items-center justify-center text-teal group-hover:bg-teal group-hover:text-navy transition-all shadow-lg border border-white/5">
                   <Mail size={22} />
                 </div>
                 <p className="text-white font-black text-base tracking-tight truncate group-hover:text-teal transition-colors uppercase italic">{content.contactEmail}</p>
@@ -80,7 +80,7 @@ const Footer: React.FC<FooterProps> = ({ content, logo }) => {
           <div className="space-y-10">
             <h4 className="text-[12px] font-black text-teal uppercase tracking-[0.4em] border-l-2 border-teal pl-4">Localização</h4>
             <div className="flex items-start gap-5">
-               <div className="w-12 h-12 bg-[#0c3b5d] rounded-2xl flex items-center justify-center text-teal shrink-0 shadow-lg border border-white/10">
+               <div className="w-12 h-12 bg-[#051421] rounded-2xl flex items-center justify-center text-teal shrink-0 shadow-lg border border-white/5">
                  <MapPin size={22} />
                </div>
                <div>
@@ -91,8 +91,8 @@ const Footer: React.FC<FooterProps> = ({ content, logo }) => {
           </div>
         </div>
 
-        <div className="pt-16 border-t border-white/10 text-center flex flex-col md:flex-row justify-between items-center gap-8">
-          <p className="text-[10px] font-black text-white/40 uppercase tracking-[0.4em]">© {new Date().getFullYear()} CENC SERVIÇOS • ENGENHARIA E AUTOMAÇÃO • FORTALEZA - CE</p>
+        <div className="pt-16 border-t border-white/5 text-center flex flex-col md:flex-row justify-between items-center gap-8">
+          <p className="text-[10px] font-black text-white/30 uppercase tracking-[0.4em]">© {new Date().getFullYear()} CENC SERVIÇOS • ENGENHARIA E AUTOMAÇÃO • FORTALEZA - CE</p>
         </div>
       </div>
     </footer>

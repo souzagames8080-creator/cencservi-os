@@ -16,7 +16,6 @@ const App: React.FC = () => {
   const [logo, setLogo] = useState<string | null>(null);
   const [content, setContent] = useState<EditableContent>(INITIAL_CONTENT);
   
-  // Efeito para carregar dados do LocalStorage com lógica de mesclagem (Deep Merge Simples)
   useEffect(() => {
     const savedMedia = localStorage.getItem('cenc_media');
     const savedLogo = localStorage.getItem('cenc_logo');
@@ -37,8 +36,6 @@ const App: React.FC = () => {
     if (savedContent) {
       try {
         const parsedContent = JSON.parse(savedContent);
-        // MESCLAGEM: Garante que se novos campos forem adicionados ao INITIAL_CONTENT no código, 
-        // eles existam mesmo que o usuário tenha um save antigo que não os possua.
         setContent({
           ...INITIAL_CONTENT,
           ...parsedContent
@@ -75,7 +72,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#051d2e] selection:bg-teal selection:text-navy">
+    <div className="min-h-screen flex flex-col bg-[#020b13] selection:bg-teal selection:text-navy">
       <Navbar onAdminToggle={() => setIsAdminOpen(true)} logo={logo} />
       
       <main className="flex-grow">
@@ -87,7 +84,7 @@ const App: React.FC = () => {
           <ServicesGrid content={content} />
         </section>
 
-        <section id="quem-atendemos" className="py-24 bg-[#051d2e] border-y border-white/10">
+        <section id="quem-atendemos" className="py-24 bg-[#020b13] border-y border-white/5">
            <div className="container mx-auto px-4">
               <div className="text-center mb-16">
                  <h2 className="text-3xl font-black text-white uppercase tracking-tighter mb-4 text-glow">Quem Atendemos</h2>
@@ -107,11 +104,11 @@ const App: React.FC = () => {
            </div>
         </section>
 
-        <section className="bg-navy py-32 overflow-hidden relative mesh-bg border-b border-white/10">
-           <div className="absolute inset-0 bg-teal/[0.04]"></div>
+        <section className="bg-[#051421] py-32 overflow-hidden relative mesh-bg border-b border-white/5">
+           <div className="absolute inset-0 bg-teal/[0.02]"></div>
            <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center relative z-10">
               <div className="text-white space-y-10">
-                 <div className="inline-flex items-center gap-2 bg-teal/10 border border-teal/30 px-4 py-1.5 rounded-full text-teal text-[10px] font-black uppercase tracking-widest">
+                 <div className="inline-flex items-center gap-2 bg-teal/10 border border-teal/20 px-4 py-1.5 rounded-full text-teal text-[10px] font-black uppercase tracking-widest">
                     Segurança de Próxima Geração
                  </div>
                  <h3 className="text-6xl font-black leading-[0.9] tracking-tighter text-glow">
@@ -134,13 +131,13 @@ const App: React.FC = () => {
                       className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-105" 
                       alt="Cerca Virtual e Segurança Perimetral" 
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy/80 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#020b13]/80 to-transparent"></div>
                  </div>
               </div>
            </div>
         </section>
 
-        <section id="portfolio" className="bg-[#051d2e] py-32">
+        <section id="portfolio" className="bg-[#020b13] py-32">
           <div className="container mx-auto px-4">
             <div className="text-center mb-24">
               <h2 className="text-5xl font-black text-white mb-6 uppercase tracking-tighter text-glow">{content.portfolioTitle}</h2>
@@ -155,7 +152,6 @@ const App: React.FC = () => {
         <Footer content={content} logo={logo} />
       </section>
 
-      {/* Botão Flutuante de Painel */}
       <button 
         onClick={() => setIsAdminOpen(true)}
         className="fixed bottom-10 left-10 z-[100] bg-teal text-navy w-16 h-16 rounded-full shadow-[0_20px_40px_rgba(0,210,255,0.4)] hover:scale-110 transition-all flex items-center justify-center border-4 border-white/20 group"
