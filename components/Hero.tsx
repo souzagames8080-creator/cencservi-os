@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Star, Activity, Instagram, Facebook, Youtube } from 'lucide-react';
 import { EditableContent } from '../types';
 
@@ -8,13 +8,18 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ content }) => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <section className="relative min-h-screen pt-32 pb-16 lg:pt-56 lg:pb-32 overflow-hidden hero-gradient mesh-bg flex items-center">
       <div className="absolute top-[10%] right-[-10%] w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] bg-teal/5 rounded-full blur-[100px] lg:blur-[150px] -z-10"></div>
-      <div className="absolute bottom-[10%] left-[-5%] w-[200px] h-[200px] bg-teal/5 rounded-full blur-[80px] -z-10"></div>
       
       <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <div className="space-y-8 lg:space-y-12 text-center lg:text-left">
+        <div className={`space-y-8 lg:space-y-12 text-center lg:text-left transition-all duration-1000 ${isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="inline-flex items-center gap-3 bg-white/5 border border-white/20 text-teal px-4 py-2 rounded-full font-black text-[9px] lg:text-[11px] uppercase tracking-[0.2em] shadow-2xl backdrop-blur-md mx-auto lg:mx-0">
              <Activity size={14} className="animate-pulse" />
              Engenharia e Automação
@@ -76,7 +81,7 @@ const Hero: React.FC<HeroProps> = ({ content }) => {
           </div>
         </div>
 
-        <div className="relative hidden lg:flex justify-end">
+        <div className={`relative hidden lg:flex justify-end transition-all duration-1000 delay-300 ${isMounted ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
           <div className="relative z-10 w-full max-w-md aspect-[4/5] rounded-[48px] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,210,255,0.3)] border-[1px] border-white/20 group">
             <img 
               src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=1000" 

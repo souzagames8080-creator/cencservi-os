@@ -80,11 +80,11 @@ const App: React.FC = () => {
           <Hero content={content} />
         </section>
         
-        <section id="servicos">
+        <section id="servicos" className="reveal">
           <ServicesGrid content={content} />
         </section>
 
-        <section id="quem-atendemos" className="py-24 bg-[#020b13] border-y border-white/5">
+        <section id="quem-atendemos" className="py-24 bg-[#020b13] border-y border-white/5 reveal">
            <div className="container mx-auto px-4">
               <div className="text-center mb-16">
                  <h2 className="text-3xl font-black text-white uppercase tracking-tighter mb-4 text-glow">Quem Atendemos</h2>
@@ -104,7 +104,7 @@ const App: React.FC = () => {
            </div>
         </section>
 
-        <section className="bg-[#051421] py-32 overflow-hidden relative mesh-bg border-b border-white/5">
+        <section className="bg-[#051421] py-32 overflow-hidden relative mesh-bg border-b border-white/5 reveal">
            <div className="absolute inset-0 bg-teal/[0.02]"></div>
            <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center relative z-10">
               <div className="text-white space-y-10">
@@ -137,7 +137,7 @@ const App: React.FC = () => {
            </div>
         </section>
 
-        <section id="portfolio" className="bg-[#020b13] py-32">
+        <section id="portfolio" className="bg-[#020b13] py-32 reveal">
           <div className="container mx-auto px-4">
             <div className="text-center mb-24">
               <h2 className="text-5xl font-black text-white mb-6 uppercase tracking-tighter text-glow">{content.portfolioTitle}</h2>
